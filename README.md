@@ -30,9 +30,9 @@
 
 ## 文档结构
 
-- `AGENTS.md`：Codex 在本项目中的协作、检查与 Git 规则。
-- `LearningProgress.md`：主课程和综合实践课程表。
-- `Notes/`：后续按主题保存调试记录、版本差异和复盘笔记。
+- [AGENTS.md](AGENTS.md)：Codex 在本项目中的协作、检查与 Git 规则。
+- [LearningProgress.md](LearningProgress.md)：主课程和综合实践课程表。
+- [Notes/](Notes/)：后续按主题保存调试记录、版本差异和复盘笔记。
 
 ## 阶段目标
 
@@ -48,4 +48,3 @@
 - 不提交教程视频、付费资源或没有明确分发许可的第三方素材。
 - 默认使用中文提交信息。
 - Git 提交、推送、标签和 Release 都需要明确请求后执行。
-
