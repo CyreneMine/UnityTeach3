@@ -8,6 +8,11 @@
 /[Uu]ser[Ss]ettings/
 /[Mm]emoryCaptures/
 /[Rr]ecordings/
+/.secrets/
+
+# Local Asset Store/tutorial resources (keep licenses local)
+/Assets/Standard Assets/
+/Assets/Standard Assets.meta
 
 # IDE and editor files
 .vs/
@@ -15,6 +20,7 @@
 .idea/
 *.csproj
 *.sln
+*.slnx
 *.suo
 *.tmp
 *.user
