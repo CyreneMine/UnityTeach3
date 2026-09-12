@@ -13,6 +13,8 @@
 # Local Asset Store/tutorial resources (keep licenses local)
 /Assets/Standard Assets/
 /Assets/Standard Assets.meta
+/Assets/Resources/RobotBoyCrouchSprite.png
+/Assets/Resources/RobotBoyCrouchSprite.png.meta
 
 # IDE and editor files
 .vs/
