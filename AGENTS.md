@@ -255,6 +255,17 @@
 - Release 前验证说明正文编码和附件内容，不只确认命令成功。
 - 教程视频、付费资源和无明确分发许可的第三方素材不得提交。
 
+### 20.1 GitHub CLI 工作流
+
+- 本机已安装 GitHub CLI，并登录 GitHub 账号 `CyreneMine`；首次执行 GitHub API 操作前用 `gh auth status` 核对当前账号。
+- 普通本地版本管理继续使用 Git：检查状态与差异、选择性暂存、提交、`git push origin master`。当前仓库已能直接推送，不再默认设置临时 `GIT_SSH_COMMAND`。
+- GitHub CLI 用于读取仓库信息，以及按用户要求管理 Pull Request、Issue、Actions、标签和 Release；普通推送不改用额外的同步命令。
+- 提交前依次检查 `git status --short`、相关差异、暂存区差异和资源排除结果；不要用 `git add .` 混入未审查文件。
+- 推送后比较 `HEAD` 与 `origin/master` 的提交号，并检查 `git status -sb`，确认分支同步且没有误漏文件。
+- 不运行或展示 `gh auth token`，不把令牌、私钥路径或认证信息写入仓库、文档、命令输出或提交记录。
+- `gh` 因安装后进程未刷新而暂时不在 PATH 时，优先重启 Codex 或定位已安装的可执行文件；不自动修改系统 PATH、全局 Git 配置或认证协议。
+- 当前认证和推送已经可用，不主动执行 `gh auth setup-git`，也不为使用 GitHub CLI 改写项目远程地址。
+
 ## 21. 建议提交粒度
 
 - 一节知识点和对应练习可作为一次提交。
