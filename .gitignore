@@ -20,6 +20,10 @@
 /Assets/Scripts/Lesson16/Square.png
 /Assets/Scripts/Lesson16/Square.png.meta
 /Assets/Scripts/Lesson16.meta
+/Assets/Scripts/Lesson50/HumanoidIdle.anim
+/Assets/Scripts/Lesson50/HumanoidIdle.anim.meta
+/Assets/Scripts/Lesson50/HumanoidWalkBack.anim
+/Assets/Scripts/Lesson50/HumanoidWalkBack.anim.meta
 
 # IDE and editor files
 .vs/
