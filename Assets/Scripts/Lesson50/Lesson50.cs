@@ -3,8 +3,6 @@ using UnityEngine;
 public class Lesson50 : MonoBehaviour
 {
     private Animator animator;
-    public float horizontalOffset;
-    public float moveSpeed;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -18,6 +16,15 @@ public class Lesson50 : MonoBehaviour
         }
         // transform.Translate(Vector3.forward * (Time.deltaTime * moveSpeed * Input.GetAxis("Vertical")));
         animator.SetFloat("horizontalOffset",Input.GetAxis("Horizontal"));
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            animator.SetTrigger("OtherAnimation");
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            animator.SetLayerWeight(animator.GetLayerIndex("IsHurt"),1);
+        }
     }
 
     public void Jump()
