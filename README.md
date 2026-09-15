@@ -21,6 +21,13 @@
 - Input System：`1.18.0`
 - UGUI：`2.0.0`
 
+## 当前阶段
+
+- Unity 核心主课程 96P 已按当前学习路线完成：73 课完成，22 课因 2D 专项或旧版内容主动暂缓，第 88 课保留运行边界复盘。
+- 已完成的重点实践包括资源加载、2D 物理、Animator 状态机与混合树、动画分层与 IK、CharacterController、NavMesh 寻路和动态障碍。
+- 下一阶段进入 38P 综合实践，从需求分析开始串联 UI、数据、场景、角色、怪物、关卡和防御塔系统。
+- 主课程阶段总结见 [Notes/CoreCourse-Summary.md](Notes/CoreCourse-Summary.md)。
+
 ## 学习方式
 
 1. 在 [LearningProgress.md](LearningProgress.md) 中确认当前课次。
@@ -33,6 +40,7 @@
 
 - [AGENTS.md](AGENTS.md)：Codex 在本项目中的协作、检查与 Git 规则。
 - [LearningProgress.md](LearningProgress.md)：主课程和综合实践课程表。
+- [Notes/CoreCourse-Summary.md](Notes/CoreCourse-Summary.md)：96P 主课程完成情况、能力沉淀和待补边界。
 - [Notes/](Notes/)：后续按主题保存调试记录、版本差异和复盘笔记。
 
 ## 阶段目标
