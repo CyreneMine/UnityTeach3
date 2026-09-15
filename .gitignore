@@ -8,22 +8,40 @@
 /[Uu]ser[Ss]ettings/
 /[Mm]emoryCaptures/
 /[Rr]ecordings/
+/UnityTeach3-Theory/[Ll]ibrary/
+/UnityTeach3-Theory/[Tt]emp/
+/UnityTeach3-Theory/[Oo]bj/
+/UnityTeach3-Theory/[Bb]uild/
+/UnityTeach3-Theory/[Bb]uilds/
+/UnityTeach3-Theory/[Ll]ogs/
+/UnityTeach3-Theory/[Uu]ser[Ss]ettings/
+/UnityTeach3-Theory/[Mm]emoryCaptures/
+/UnityTeach3-Theory/[Rr]ecordings/
+/UnityTeach3-Project/[Ll]ibrary/
+/UnityTeach3-Project/[Tt]emp/
+/UnityTeach3-Project/[Oo]bj/
+/UnityTeach3-Project/[Bb]uild/
+/UnityTeach3-Project/[Bb]uilds/
+/UnityTeach3-Project/[Ll]ogs/
+/UnityTeach3-Project/[Uu]ser[Ss]ettings/
+/UnityTeach3-Project/[Mm]emoryCaptures/
+/UnityTeach3-Project/[Rr]ecordings/
 /.secrets/
 
 # Local Asset Store/tutorial resources (keep licenses local)
-/Assets/Standard Assets/
-/Assets/Standard Assets.meta
-/Assets/Resources/RobotBoyCrouchSprite.png
-/Assets/Resources/RobotBoyCrouchSprite.png.meta
-/Assets/Scripts/Lesson11/IsometricDiamond.png
-/Assets/Scripts/Lesson11/IsometricDiamond.png.meta
-/Assets/Scripts/Lesson16/Square.png
-/Assets/Scripts/Lesson16/Square.png.meta
-/Assets/Scripts/Lesson16.meta
-/Assets/Scripts/Lesson50/HumanoidIdle.anim
-/Assets/Scripts/Lesson50/HumanoidIdle.anim.meta
-/Assets/Scripts/Lesson50/HumanoidWalkBack.anim
-/Assets/Scripts/Lesson50/HumanoidWalkBack.anim.meta
+/UnityTeach3-Theory/Assets/Standard Assets/
+/UnityTeach3-Theory/Assets/Standard Assets.meta
+/UnityTeach3-Theory/Assets/Resources/RobotBoyCrouchSprite.png
+/UnityTeach3-Theory/Assets/Resources/RobotBoyCrouchSprite.png.meta
+/UnityTeach3-Theory/Assets/Scripts/Lesson11/IsometricDiamond.png
+/UnityTeach3-Theory/Assets/Scripts/Lesson11/IsometricDiamond.png.meta
+/UnityTeach3-Theory/Assets/Scripts/Lesson16/Square.png
+/UnityTeach3-Theory/Assets/Scripts/Lesson16/Square.png.meta
+/UnityTeach3-Theory/Assets/Scripts/Lesson16.meta
+/UnityTeach3-Theory/Assets/Scripts/Lesson50/HumanoidIdle.anim
+/UnityTeach3-Theory/Assets/Scripts/Lesson50/HumanoidIdle.anim.meta
+/UnityTeach3-Theory/Assets/Scripts/Lesson50/HumanoidWalkBack.anim
+/UnityTeach3-Theory/Assets/Scripts/Lesson50/HumanoidWalkBack.anim.meta
 
 # IDE and editor files
 .vs/

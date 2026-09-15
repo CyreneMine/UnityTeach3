@@ -1,0 +1,29 @@
+# UnityTeach3 工作区记忆
+
+## 目录映射
+
+- 仓库根目录：`E:\UnityLearn\UnityTeach3`。
+- 理论工程：`E:\UnityLearn\UnityTeach3\UnityTeach3-Theory`。
+- 综合实践工程：`E:\UnityLearn\UnityTeach3\UnityTeach3-Project`。
+- `UnityTeach3-Project` 的原始创建位置是 `E:\UnityLearn\UnityTeachDemo3`，整理后以仓库内路径为准。
+
+## 工程职责
+
+- `UnityTeach3-Theory` 保存已经结束的 96P 理论练习，默认只读，仅用于参考和补充验证。
+- `UnityTeach3-Project` 是后续 38P 3D 项目实践的主工程。
+- 新增代码、场景、Prefab、材质和项目配置默认写入 `UnityTeach3-Project`，不能误写到理论工程。
+- `README.md`、`LearningProgress.md`、`AGENTS.md`、`CODEX_MEMORY.md` 和 `Notes/` 保留在仓库根目录，统一管理两个工程。
+
+## 当前状态
+
+- 两个工程均使用 Unity `6000.3.10f1`。
+- 96P 主课程理论阶段已经结束：73 课已完成，22 课按 3D 学习路线主动暂缓，第 88 课保留运行边界复盘。
+- 下一阶段是 38P 综合实践，从第 1 课需求分析开始。
+
+## 协作约定
+
+- 回答综合实践问题前，优先检查 `UnityTeach3-Project` 的真实文件、场景、Prefab、Inspector 配置和运行日志。
+- `UnityTeach3-Theory` 默认只读，除非用户明确要求修改。
+- 未经明确授权，不修改 C#、场景、Prefab、资源、`Packages` 或 `ProjectSettings`。
+- 每课完成后更新 `LearningProgress.md`，关键误区和复用结论写入 `Notes/`。
+- 只有用户明确要求时才提交或推送；推送前排除生成目录和无分发许可的第三方资源。
