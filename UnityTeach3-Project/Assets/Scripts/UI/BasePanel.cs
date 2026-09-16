@@ -4,10 +4,10 @@ using UnityEngine.Events;
 
 public abstract class BasePanel : MonoBehaviour
 {
-    private CanvasGroup canvasGroup;
-    private float alphaSpeed = 10f;
-    private bool isShow;
-    private UnityAction hideCallBack;
+    private CanvasGroup _canvasGroup;
+    private float _alphaSpeed = 10f;
+    private bool _isShow;
+    private UnityAction _hideCallBack;
     protected virtual void Start()
     {
         Init();
@@ -15,39 +15,39 @@ public abstract class BasePanel : MonoBehaviour
 
     protected virtual void Awake()
     {
-        canvasGroup = GetComponent<CanvasGroup>();
-        if (canvasGroup == null)
-            canvasGroup = gameObject.AddComponent<CanvasGroup>();
+        _canvasGroup = GetComponent<CanvasGroup>();
+        if (_canvasGroup == null)
+            _canvasGroup = gameObject.AddComponent<CanvasGroup>();
     }
 
     public abstract void Init();
     void Update()
     {
-        if (isShow && alphaSpeed < 1)
+        if (_isShow && _alphaSpeed < 1)
         {
-            canvasGroup.alpha += alphaSpeed * Time.deltaTime;
-            if (canvasGroup.alpha > 1)
-                canvasGroup.alpha = 1;
-        }else if (!isShow && alphaSpeed > 0)
+            _canvasGroup.alpha += _alphaSpeed * Time.deltaTime;
+            if (_canvasGroup.alpha > 1)
+                _canvasGroup.alpha = 1;
+        }else if (!_isShow && _alphaSpeed > 0)
         {
-            canvasGroup.alpha -= alphaSpeed * Time.deltaTime;
-            if (canvasGroup.alpha < 0)
+            _canvasGroup.alpha -= _alphaSpeed * Time.deltaTime;
+            if (_canvasGroup.alpha < 0)
             {
-                canvasGroup.alpha = 0;
-                hideCallBack?.Invoke();
+                _canvasGroup.alpha = 0;
+                _hideCallBack?.Invoke();
             }
         }
     }
 
     public virtual void ShowMe()
     {
-        canvasGroup.alpha = 0;
-        isShow = true;
+        _canvasGroup.alpha = 0;
+        _isShow = true;
     }
     public virtual void HideMe(UnityAction callBack)
     {
-        canvasGroup.alpha = 1;
-        isShow = false;
-        hideCallBack = callBack;
+        _canvasGroup.alpha = 1;
+        _isShow = false;
+        _hideCallBack = callBack;
     }
 }
