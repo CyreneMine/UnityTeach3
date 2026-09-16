@@ -27,3 +27,6 @@
 - 未经明确授权，不修改 C#、场景、Prefab、资源、`Packages` 或 `ProjectSettings`。
 - 每课完成后更新 `LearningProgress.md`，关键误区和复用结论写入 `Notes/`。
 - 只有用户明确要求时才提交或推送；推送前排除生成目录和无分发许可的第三方资源。
+- `UnityTeach3-Project/Assets/ArtRes/` 是本地教学与第三方资源目录，必须始终排除在 Git 之外；对应的 `ArtRes.meta` 也不提交。
+- `UnityTeach3-Project/Assets/_TerrainAutoUpgrade/` 是资源导入产生的本地升级结果，不提交。
+- 综合实践结束时，为整个小 Demo 编写总览总结，并分别总结 UI、数据、场景、摄像机、玩家、怪物、关卡和防御塔等模块。

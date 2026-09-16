@@ -29,6 +29,10 @@
 /.secrets/
 
 # Local Asset Store/tutorial resources (keep licenses local)
+/UnityTeach3-Project/Assets/ArtRes/
+/UnityTeach3-Project/Assets/ArtRes.meta
+/UnityTeach3-Project/Assets/_TerrainAutoUpgrade/
+/UnityTeach3-Project/Assets/_TerrainAutoUpgrade.meta
 /UnityTeach3-Theory/Assets/Standard Assets/
 /UnityTeach3-Theory/Assets/Standard Assets.meta
 /UnityTeach3-Theory/Assets/Resources/RobotBoyCrouchSprite.png
