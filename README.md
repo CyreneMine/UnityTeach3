@@ -48,8 +48,9 @@ UnityTeach3/
 
 - Unity 核心主课程 96P 已按当前学习路线完成：73 课完成，22 课因 2D 专项或旧版内容主动暂缓，第 88 课保留运行边界复盘。
 - 已完成的重点实践包括资源加载、2D 物理、Animator 状态机与混合树、动画分层与 IK、CharacterController、NavMesh 寻路和动态障碍。
-- 当前进入 38P 综合实践，从需求分析开始串联 UI、数据、场景、角色、怪物、关卡和防御塔系统。
+- 当前进入 38P 综合实践，已完成需求准备、UI 面板基类、UIManager、开始场景和开始面板主体；开始、设置、关于按钮的后续跳转需等待对应面板和场景完成。
 - 主课程阶段总结见 [Notes/CoreCourse-Summary.md](Notes/CoreCourse-Summary.md)。
+- 综合实践 UI 起步阶段复盘见 [Notes/Practice-UI-Foundation-BeginPanel.md](Notes/Practice-UI-Foundation-BeginPanel.md)。
 
 ## 学习方式
 
@@ -78,6 +79,7 @@ UnityTeach3/
 
 - 两个 Unity 工程都不提交 `Library/`、`Temp/`、`Logs/`、`obj/`、`UserSettings/` 等本地生成目录。
 - `UnityTeach3-Project/Assets/ArtRes/` 仅保存本地导入的教学与第三方资源，整个目录及其 `.meta` 不进入 Git。
+- Unity 导入的 `TextMesh Pro/` 资源以及教程附带的 `LitJson/` 源码库只保留在本地，不进入 Git。
 - 不提交教程视频、付费资源或没有明确分发许可的第三方素材；仓库只保留自己的脚本、场景、Prefab、配置和学习文档。
 - 综合实践完成后，补充一份小 Demo 总结，并按 UI、数据、场景、摄像机、玩家、怪物、关卡、防御塔等模块分别整理实现、验证结果、问题和可复用结论。
 - 默认使用中文提交信息。

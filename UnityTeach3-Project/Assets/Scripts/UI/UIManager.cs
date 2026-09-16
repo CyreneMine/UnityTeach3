@@ -8,7 +8,7 @@ public class UIManager
     private Transform _canvas;
     private UIManager()
     {
-        GameObject canvasObj = Resources.Load<GameObject>("UI/Canvas");
+        GameObject canvasObj = GameObject.Instantiate(Resources.Load<GameObject>("UI/Canvas"));
         _canvas = canvasObj.transform;
         GameObject.DontDestroyOnLoad(canvasObj);
     }
@@ -19,9 +19,9 @@ public class UIManager
         {
             return _panels[panelName] as T;
         }
-
-        GameObject panelObj = GameObject.Instantiate(Resources.Load<GameObject>("UI" + panelName));
-        panelObj.transform.SetParent(_canvas);
+        GameObject panelObj = GameObject.Instantiate(Resources.Load<GameObject>("UI/" +panelName));
+        Debug.Log(panelObj);
+        panelObj.transform.SetParent(_canvas,false);
         T panelScript = panelObj.GetComponent<T>();
         panelScript.ShowMe();
         _panels.Add(panelName, panelScript);

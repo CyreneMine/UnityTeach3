@@ -262,6 +262,7 @@
 - Release 前验证说明正文编码和附件内容，不只确认命令成功。
 - 教程视频、付费资源和无明确分发许可的第三方素材不得提交。
 - `UnityTeach3-Project/Assets/ArtRes/` 及其 `.meta` 是本地教学与第三方资源，必须始终排除在 Git 之外。
+- `UnityTeach3-Project/Assets/TextMesh Pro/` 与教程附带的 `UnityTeach3-Project/Assets/Scripts/Json/LitJson/` 同样只保留在本地，不提交。
 - 综合实践完成后，除小 Demo 总结外，还要按 UI、数据、场景、摄像机、玩家、怪物、关卡和防御塔等模块分别形成总结。
 
 ### 20.1 GitHub CLI 工作流

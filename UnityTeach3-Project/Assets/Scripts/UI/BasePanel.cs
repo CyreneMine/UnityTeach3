@@ -23,12 +23,12 @@ public abstract class BasePanel : MonoBehaviour
     public abstract void Init();
     void Update()
     {
-        if (_isShow && _alphaSpeed < 1)
+        if (_isShow && _canvasGroup.alpha < 1)
         {
             _canvasGroup.alpha += _alphaSpeed * Time.deltaTime;
             if (_canvasGroup.alpha > 1)
                 _canvasGroup.alpha = 1;
-        }else if (!_isShow && _alphaSpeed > 0)
+        }else if (!_isShow && _canvasGroup.alpha > 0)
         {
             _canvasGroup.alpha -= _alphaSpeed * Time.deltaTime;
             if (_canvasGroup.alpha < 0)
