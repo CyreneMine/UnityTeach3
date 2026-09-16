@@ -32,7 +32,7 @@
 
 ## 调试记录
 
-1. Canvas 是 `UIManager` 构造函数创建的 GameObject，而 UIManager 自己只是托管对象，不会显示在 Hierarchy 中。
+1. Canvas 已由 `UIManager` 构造函数成功创建；调用 `DontDestroyOnLoad(canvasObj)` 后，Unity 会把它移入运行时的 `DontDestroyOnLoad` 特殊场景，因此它不会继续显示在原来的 `BeginScene` 层级下。此前认为 Canvas 没有创建属于观察位置错误；UIManager 自己仍是普通托管对象，不会作为 GameObject 显示在 Hierarchy 中。
 2. 面板曾因淡入条件错误而保持 `CanvasGroup.alpha = 0`；判断透明度后恢复显示。
 3. `Transform.SetParent(parent)` 默认保留世界坐标，会使 UI Prefab 换父节点后产生位置偏差；传入 `false` 后按 Prefab 的局部 RectTransform 布局显示。
 4. 当前 `EditorBuildSettings` 尚未登记场景，后续实现按钮切换场景前需要补充构建场景列表。
