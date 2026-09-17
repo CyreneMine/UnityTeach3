@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | [UnityTeach3-Project](UnityTeach3-Project/) | 38P 3D 综合实践主工程 | 当前使用 |
 | [UnityTeach3-Theory](UnityTeach3-Theory/) | 96P 理论练习工程 | 已结束，默认只读 |
-| [学习进度](LearningProgress.md) | 主课程与综合实践课次记录 | 综合实践待开始 |
+| [学习进度](LearningProgress.md) | 主课程与综合实践课次记录 | 综合实践已完成至第 13P |
 | [主课程总结](Notes/CoreCourse-Summary.md) | 96P 学习成果、取舍和待补边界 | 已完成 |
 | [协作规则](AGENTS.md) | 双工程检查、修改和 Git 规则 | 当前有效 |
 | [工作区记忆](CODEX_MEMORY.md) | 路径映射与跨会话稳定约定 | 当前有效 |
@@ -48,9 +48,10 @@ UnityTeach3/
 
 - Unity 核心主课程 96P 已按当前学习路线完成：73 课完成，22 课因 2D 专项或旧版内容主动暂缓，第 88 课保留运行边界复盘。
 - 已完成的重点实践包括资源加载、2D 物理、Animator 状态机与混合树、动画分层与 IK、CharacterController、NavMesh 寻路和动态障碍。
-- 当前进入 38P 综合实践，已完成需求准备、UI 面板基类、UIManager、开始场景、设置面板、背景音乐数据与摄像机动画；开始按钮已能播放镜头动画并在动画结束后进入后续回调，下一步制作选角面板。
+- 当前进入 38P 综合实践，已完成至第 13P“选角面板：角色资源准备”；1～7 号角色 Prefab 均已配置对应 Animator Controller，下一步学习第 14P“选角面板：数据准备”。
 - 主课程阶段总结见 [Notes/CoreCourse-Summary.md](Notes/CoreCourse-Summary.md)。
 - 综合实践 UI 起步阶段复盘见 [Notes/Practice-UI-Foundation-BeginPanel.md](Notes/Practice-UI-Foundation-BeginPanel.md)。
+- 角色 Animator Override 配置见 [Notes/Practice-Character-Animator-Overrides.md](Notes/Practice-Character-Animator-Overrides.md)。
 
 ## 学习方式
 
