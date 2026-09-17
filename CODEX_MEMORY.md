@@ -18,7 +18,7 @@
 
 - 两个工程均使用 Unity `6000.3.10f1`。
 - 96P 主课程理论阶段已经结束：73 课已完成，22 课按 3D 学习路线主动暂缓，第 88 课保留运行边界复盘。
-- 38P 综合实践已进入 UI 起步阶段：需求准备、面板基类、UIManager、BeginScene 和 BeginPanel 主体已完成；开始界面剩余跳转依赖设置、关于及后续场景面板。
+- 38P 综合实践已完成 UI 基础、BeginScene、SettingPanel、背景音乐设置和开始按钮摄像机动画；开始按钮等待选角面板完成后替换临时回调，关于按钮也尚未接入目标面板。
 
 ## 协作约定
 
@@ -30,4 +30,5 @@
 - `UnityTeach3-Project/Assets/ArtRes/` 是本地教学与第三方资源目录，必须始终排除在 Git 之外；对应的 `ArtRes.meta` 也不提交。
 - `UnityTeach3-Project/Assets/_TerrainAutoUpgrade/` 是资源导入产生的本地升级结果，不提交。
 - `UnityTeach3-Project/Assets/TextMesh Pro/` 和教程附带的 `UnityTeach3-Project/Assets/Scripts/Json/LitJson/` 只保留在本地，不提交。
+- `UnityTeach3-Project/Assets/Resources/Music/` 中的教学音频素材及其 `.meta` 只保留在本地，不提交。
 - 综合实践结束时，为整个小 Demo 编写总览总结，并分别总结 UI、数据、场景、摄像机、玩家、怪物、关卡和防御塔等模块。

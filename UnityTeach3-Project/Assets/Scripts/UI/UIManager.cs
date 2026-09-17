@@ -20,7 +20,6 @@ public class UIManager
             return _panels[panelName] as T;
         }
         GameObject panelObj = GameObject.Instantiate(Resources.Load<GameObject>("UI/" +panelName));
-        Debug.Log(panelObj);
         panelObj.transform.SetParent(_canvas,false);
         T panelScript = panelObj.GetComponent<T>();
         panelScript.ShowMe();

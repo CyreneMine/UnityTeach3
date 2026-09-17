@@ -26,12 +26,12 @@ public abstract class BasePanel : MonoBehaviour
         if (_isShow && _canvasGroup.alpha < 1)
         {
             _canvasGroup.alpha += _alphaSpeed * Time.deltaTime;
-            if (_canvasGroup.alpha > 1)
+            if (_canvasGroup.alpha >= 1)
                 _canvasGroup.alpha = 1;
         }else if (!_isShow && _canvasGroup.alpha > 0)
         {
             _canvasGroup.alpha -= _alphaSpeed * Time.deltaTime;
-            if (_canvasGroup.alpha < 0)
+            if (_canvasGroup.alpha <= 0)
             {
                 _canvasGroup.alpha = 0;
                 _hideCallBack?.Invoke();
