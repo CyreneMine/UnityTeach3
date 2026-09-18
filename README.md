@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | [UnityTeach3-Project](UnityTeach3-Project/) | 38P 3D 综合实践主工程 | 当前使用 |
 | [UnityTeach3-Theory](UnityTeach3-Theory/) | 96P 理论练习工程 | 已结束，默认只读 |
-| [学习进度](LearningProgress.md) | 主课程与综合实践课次记录 | 第 14P 已完成，第 15P 学习中 |
+| [学习进度](LearningProgress.md) | 主课程与综合实践课次记录 | 第 16P、17P 已完成，第 15P 待场景选择面板接入 |
 | [主课程总结](Notes/CoreCourse-Summary.md) | 96P 学习成果、取舍和待补边界 | 已完成 |
 | [协作规则](AGENTS.md) | 双工程检查、修改和 Git 规则 | 当前有效 |
 | [工作区记忆](CODEX_MEMORY.md) | 路径映射与跨会话稳定约定 | 当前有效 |
@@ -48,9 +48,10 @@ UnityTeach3/
 
 - Unity 核心主课程 96P 已按当前学习路线完成：73 课完成，22 课因 2D 专项或旧版内容主动暂缓，第 88 课保留运行边界复盘。
 - 已完成的重点实践包括资源加载、2D 物理、Animator 状态机与混合树、动画分层与 IK、CharacterController、NavMesh 寻路和动态障碍。
-- 当前进入 38P 综合实践：第 14P“选角面板：数据准备”已完成，第 15P 已完成角色展示、切换、解锁、返回和数据保存主体逻辑；金币不足提示与开始游戏后的场景选择跳转等待后续面板完成后接入。
+- 当前进入 38P 综合实践：第 16P、17P 提示面板已完成，并已回补第 15P 的金币不足提示；第 15P 只剩开始游戏后的场景选择跳转，下一步进入第 18P。
 - 主课程阶段总结见 [Notes/CoreCourse-Summary.md](Notes/CoreCourse-Summary.md)。
 - 综合实践 UI 起步阶段复盘见 [Notes/Practice-UI-Foundation-BeginPanel.md](Notes/Practice-UI-Foundation-BeginPanel.md)。
+- 提示面板实现与检查记录见 [Notes/Practice-TipPanel.md](Notes/Practice-TipPanel.md)。
 - 角色 Animator Override 配置见 [Notes/Practice-Character-Animator-Overrides.md](Notes/Practice-Character-Animator-Overrides.md)。
 - 选角面板与角色数据复盘见 [Notes/Practice-ChoosePanel.md](Notes/Practice-ChoosePanel.md)。
 

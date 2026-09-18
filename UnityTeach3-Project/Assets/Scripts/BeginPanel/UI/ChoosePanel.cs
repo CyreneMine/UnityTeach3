@@ -53,8 +53,7 @@ public class ChoosePanel : BasePanel
             }
             else
             {   
-                //弹出余额不足弹窗
-                print("金币不足");
+                UIManager.Instance.ShowPanel<TipPanel>().ChangeInfo("金币不足！");
             }
         });
         btnBack.onClick.AddListener(() =>
