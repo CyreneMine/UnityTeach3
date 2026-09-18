@@ -6,7 +6,7 @@
 - 完成视频不等于完成课程；练习、场景配置和必要运行验证也要完成。
 - 每课备注建议记录错误原因、验证方法、适用边界和下一步。
 - 当前进度：主课程理论阶段已结束；第 1–32、42–44、46–50、63–87、89–96 课已完成，第 33–41、45、51–62 课已跳过；第 88 课代码与概念复查通过但运行边界待确认。
-- 下一步：开始综合实践第 14P“选角面板：数据准备”。
+- 下一步：开始综合实践第 16P“提示面板：拼界面”；提示面板和场景选择面板完成后，回补第 15P 的跨面板跳转。
 - 主课程阶段总结：[Unity 核心主课程阶段总结](Notes/CoreCourse-Summary.md)。
 
 ## 工程目录
@@ -128,15 +128,15 @@
 | 4 | UI 管理器 | 已完成 | 已完成单例入口、Canvas 创建、Resources 面板加载、缓存、显示、隐藏与查询；已修正 UI 挂载时的局部布局保留 |
 | 5 | 场景搭建 | 已完成 | 已完成 `BeginScene` 搭建并挂载 `Main` 入口；当前场景尚未加入构建场景列表 |
 | 6 | 开始界面：拼面板 | 已完成 | 已完成 `BeginPanel` Prefab 与开始、设置、关于、退出四个按钮的 Inspector 引用 |
-| 7 | 开始界面：界面逻辑 | 学习中 | 设置按钮已接入 SettingPanel；开始按钮会隐藏 BeginPanel、播放摄像机左转动画并等待结束回调；退出使用 `Application.Quit()`；关于按钮和选角面板显示仍待后续模块补齐；详见 [复盘](Notes/Practice-UI-Foundation-BeginPanel.md) |
+| 7 | 开始界面：界面逻辑 | 学习中 | 设置按钮已接入 SettingPanel；开始按钮会隐藏 BeginPanel、播放摄像机左转动画并显示 ChoosePanel；退出使用 `Application.Quit()`；关于按钮等待后续面板补齐；详见 [复盘](Notes/Practice-UI-Foundation-BeginPanel.md) |
 | 8 | 设置界面：拼面板 | 已完成 | 已完成 `SettingPanel` Prefab，关闭按钮、音乐/音效 Toggle 与 Slider 引用完整 |
 | 9 | 设置界面：背景音乐数据 | 已完成 | 已建立 `MusicData`、`GameDataMgr`、`JsonMgr` 和 `BKMusic`；启动时读取本地数据，关闭设置时保存到持久化目录；LitJson 依赖仅保留在本地 |
 | 10 | 设置界面：界面逻辑 | 已完成 | 已实现设置面板显示时的数据回填、背景音乐静音与音量实时调整、关闭时保存并淡出销毁；音效设置数据已保存，实际音效应用等待音效系统 |
 | 11 | 摄像机动画逻辑 | 已完成 | 已制作 Idle、左右转镜头动画和 Animator，`CameraAnimator` 通过 Trigger 播放并用动画事件 `PlayOver()` 调用回调；运行日志已验证开始按钮左转动画结束回调 |
 | 12 | 选角面板：拼面板 | 已完成 | 已建立 `ChoosePanel` Prefab 和对应脚本，作为后续角色展示与选择界面的基础 |
 | 13 | 选角面板：角色资源准备 | 已完成 | 角色 1 原版控制器和角色 2 首个覆盖控制器由用户手动配置；角色 3～7 由 AI Agent 根据 `WeaponContainer` 下的武器协助创建并绑定覆盖控制器。控制器、16 项动画映射和 Prefab 引用校验通过，用户确认本课已完成；详见 [配置记录](Notes/Practice-Character-Animator-Overrides.md) |
-| 14 | 选角面板：数据准备 | 未开始 | |
-| 15 | 选角面板：界面逻辑 | 未开始 | |
+| 14 | 选角面板：数据准备 | 已完成 | 已建立 `RoleInfo`、`PlayerData`、`GameDataMgr` 数据入口和包含 7 个角色的 `StreamingAssets/RoleInfo.json`；角色编号、Resources 路径与 Prefab 对应关系检查通过；详见 [复盘](Notes/Practice-ChoosePanel.md) |
+| 15 | 选角面板：界面逻辑 | 学习中 | 已完成角色实例化、左右循环切换、信息刷新、金币解锁与保存、开始按钮可用状态、返回镜头动画和隐藏清理；金币不足提示及开始游戏后的场景选择跳转等待对应面板完成后接入；详见 [复盘](Notes/Practice-ChoosePanel.md) |
 | 16 | 提示面板：拼界面 | 未开始 | |
 | 17 | 提示面板：界面逻辑 | 未开始 | |
 | 18 | 场景选择面板：拼面板 | 未开始 | |
@@ -171,5 +171,5 @@
 | 2D 动画与骨骼 | 42–62 | 部分完成 | Animator 前置内容已学习；旧版 Animation 练习及 2D 骨骼、换装、Spine 暂缓，详见 [路线记录](Notes/StudyRoute-2D-Content.md) |
 | 3D 模型与动画 | 63–86 | 已完成 | [阶段总结](Notes/CoreCourse-Summary.md) |
 | 角色控制与导航 | 87–96 | 待复盘 | 第 88 课代码与概念通过，移动碰撞及不同位置、朝向下的实际画面仍待确认；其余课程已完成 |
-| 综合实践 | 实践 1–38 | 学习中 | 已完成至第 13P“选角面板：角色资源准备”，下一步进入第 14P“选角面板：数据准备”；详见 [UI 阶段复盘](Notes/Practice-UI-Foundation-BeginPanel.md) 与 [角色动画配置](Notes/Practice-Character-Animator-Overrides.md) |
+| 综合实践 | 实践 1–38 | 学习中 | 第 14P 数据准备已完成，第 15P 选角逻辑已完成主体并等待提示面板、场景选择面板接入；下一步进入第 16P；详见 [选角面板复盘](Notes/Practice-ChoosePanel.md) |
 

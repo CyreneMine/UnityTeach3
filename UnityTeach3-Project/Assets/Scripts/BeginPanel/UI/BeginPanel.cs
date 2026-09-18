@@ -10,7 +10,7 @@ public class BeginPanel : BasePanel
         {
             Camera.main.GetComponent<CameraAnimator>().TurnLeft(() =>
             {
-                print("打开选角面板");
+                UIManager.Instance.ShowPanel<ChoosePanel>();
             });
             UIManager.Instance.HidePanel<BeginPanel>();
         }));
