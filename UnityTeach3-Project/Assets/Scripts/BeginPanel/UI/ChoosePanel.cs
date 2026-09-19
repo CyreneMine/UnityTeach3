@@ -39,6 +39,7 @@ public class ChoosePanel : BasePanel
         {
             GameDataMgr.Instance.nowSelRoleId = nowRoleId;
             UIManager.Instance.HidePanel<ChoosePanel>();
+            UIManager.Instance.ShowPanel<ChooseScenePanel>();
         });
         btnUnLock.onClick.AddListener(() =>
         {

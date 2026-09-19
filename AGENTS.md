@@ -264,6 +264,7 @@
 - `UnityTeach3-Project/Assets/ArtRes/` 及其 `.meta` 是本地教学与第三方资源，必须始终排除在 Git 之外。
 - `UnityTeach3-Project/Assets/TextMesh Pro/` 与教程附带的 `UnityTeach3-Project/Assets/Scripts/Json/LitJson/` 同样只保留在本地，不提交。
 - `UnityTeach3-Project/Assets/Resources/Music/` 保存本地教学音频素材及其 `.meta`，不得提交；自己的音乐控制脚本和数据结构可以提交。
+- `UnityTeach3-Project/Assets/Resources/SceneImg/` 保存本地教学场景预览图及其 `.meta`，不得提交；场景数据、加载代码和 UI Prefab 可以提交。
 - 综合实践完成后，除小 Demo 总结外，还要按 UI、数据、场景、摄像机、玩家、怪物、关卡和防御塔等模块分别形成总结。
 
 ### 20.1 GitHub CLI 工作流

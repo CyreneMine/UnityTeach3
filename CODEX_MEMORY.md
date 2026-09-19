@@ -18,7 +18,7 @@
 
 - 两个工程均使用 Unity `6000.3.10f1`。
 - 96P 主课程理论阶段已经结束：73 课已完成，22 课按 3D 学习路线主动暂缓，第 88 课保留运行边界复盘。
-- 38P 综合实践的第 16P、17P“提示面板”已完成；第 15P 的金币不足提示已经回补，角色展示、循环切换、解锁存档、按钮状态、返回镜头动画和隐藏清理均已完成，目前只等待场景选择面板完成后接入开始游戏跳转，下一步进入第 18P。
+- 38P 综合实践的第 21P～23P 已完成。游戏血条由教程的手动图片宽度方案改为只读 Slider，底部防御塔选项由手动定位改为水平父布局与垂直子布局，单个选项由教程的“文字＋图片＋文字”改为“文字＋按钮＋文字”。GamePanel 已提供初始化、血量/波次/金币更新和退出接口；计划后续支持按住 Alt 呼出指针点击及数字键 1/2/3 快选。GamePanel 的场景启动创建按用户决定暂缓，下一步进入第 24P“摄像机跟随逻辑”。
 
 ## 协作约定
 
@@ -31,4 +31,5 @@
 - `UnityTeach3-Project/Assets/_TerrainAutoUpgrade/` 是资源导入产生的本地升级结果，不提交。
 - `UnityTeach3-Project/Assets/TextMesh Pro/` 和教程附带的 `UnityTeach3-Project/Assets/Scripts/Json/LitJson/` 只保留在本地，不提交。
 - `UnityTeach3-Project/Assets/Resources/Music/` 中的教学音频素材及其 `.meta` 只保留在本地，不提交。
+- `UnityTeach3-Project/Assets/Resources/SceneImg/` 中的教学场景预览图及其 `.meta` 只保留在本地，不提交。
 - 综合实践结束时，为整个小 Demo 编写总览总结，并分别总结 UI、数据、场景、摄像机、玩家、怪物、关卡和防御塔等模块。

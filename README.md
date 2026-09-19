@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | [UnityTeach3-Project](UnityTeach3-Project/) | 38P 3D 综合实践主工程 | 当前使用 |
 | [UnityTeach3-Theory](UnityTeach3-Theory/) | 96P 理论练习工程 | 已结束，默认只读 |
-| [学习进度](LearningProgress.md) | 主课程与综合实践课次记录 | 第 16P、17P 已完成，第 15P 待场景选择面板接入 |
+| [学习进度](LearningProgress.md) | 主课程与综合实践课次记录 | 第 21P～23P 已完成，准备进入第 24P |
 | [主课程总结](Notes/CoreCourse-Summary.md) | 96P 学习成果、取舍和待补边界 | 已完成 |
 | [协作规则](AGENTS.md) | 双工程检查、修改和 Git 规则 | 当前有效 |
 | [工作区记忆](CODEX_MEMORY.md) | 路径映射与跨会话稳定约定 | 当前有效 |
@@ -48,12 +48,14 @@ UnityTeach3/
 
 - Unity 核心主课程 96P 已按当前学习路线完成：73 课完成，22 课因 2D 专项或旧版内容主动暂缓，第 88 课保留运行边界复盘。
 - 已完成的重点实践包括资源加载、2D 物理、Animator 状态机与混合树、动画分层与 IK、CharacterController、NavMesh 寻路和动态障碍。
-- 当前进入 38P 综合实践：第 16P、17P 提示面板已完成，并已回补第 15P 的金币不足提示；第 15P 只剩开始游戏后的场景选择跳转，下一步进入第 18P。
+- 当前进入 38P 综合实践：第 21P～23P 游戏场景、界面拼接与界面逻辑已经完成；GamePanel 的场景启动创建按当前计划延后，下一步进入第 24P“摄像机跟随逻辑”。
 - 主课程阶段总结见 [Notes/CoreCourse-Summary.md](Notes/CoreCourse-Summary.md)。
 - 综合实践 UI 起步阶段复盘见 [Notes/Practice-UI-Foundation-BeginPanel.md](Notes/Practice-UI-Foundation-BeginPanel.md)。
 - 提示面板实现与检查记录见 [Notes/Practice-TipPanel.md](Notes/Practice-TipPanel.md)。
 - 角色 Animator Override 配置见 [Notes/Practice-Character-Animator-Overrides.md](Notes/Practice-Character-Animator-Overrides.md)。
 - 选角面板与角色数据复盘见 [Notes/Practice-ChoosePanel.md](Notes/Practice-ChoosePanel.md)。
+- 场景选择面板与开始场景阶段记录见 [Notes/Practice-ChooseScenePanel.md](Notes/Practice-ChooseScenePanel.md)。
+- 游戏场景搭建与 UI 设计取舍见 [Notes/Practice-GameScene-UI.md](Notes/Practice-GameScene-UI.md)。
 
 ## 学习方式
 
@@ -84,6 +86,7 @@ UnityTeach3/
 - `UnityTeach3-Project/Assets/ArtRes/` 仅保存本地导入的教学与第三方资源，整个目录及其 `.meta` 不进入 Git。
 - Unity 导入的 `TextMesh Pro/` 资源以及教程附带的 `LitJson/` 源码库只保留在本地，不进入 Git。
 - `UnityTeach3-Project/Assets/Resources/Music/` 中的教学音频只保留在本地，不进入 Git；音乐控制脚本和设置数据仍纳入版本管理。
+- `UnityTeach3-Project/Assets/Resources/SceneImg/` 中的教学场景预览图及其 `.meta` 只保留在本地，不进入 Git；场景数据、加载代码和 UI Prefab 仍纳入版本管理。
 - 不提交教程视频、付费资源或没有明确分发许可的第三方素材；仓库只保留自己的脚本、场景、Prefab、配置和学习文档。
 - 综合实践完成后，补充一份小 Demo 总结，并按 UI、数据、场景、摄像机、玩家、怪物、关卡、防御塔等模块分别整理实现、验证结果、问题和可复用结论。
 - 默认使用中文提交信息。
