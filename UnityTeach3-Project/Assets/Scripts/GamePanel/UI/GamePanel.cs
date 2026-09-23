@@ -28,9 +28,10 @@ public class GamePanel : BasePanel
         });
         choiceTowerArea.gameObject.SetActive(false);
     }
-    public void UpdateHpBar(int hp)
+    public void UpdateHpBar(int hp,int maxHP)
     {
-        nowHp -= hp;
+        nowHp = hp;
+        maxHp = maxHP;
         sliderHp.value = nowHp;
         txtNowHp.text = $"{nowHp}/{maxHp}";
     }
