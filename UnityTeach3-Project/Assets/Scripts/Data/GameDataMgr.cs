@@ -9,6 +9,7 @@ public class GameDataMgr
     public List<RoleInfo> roleInfos;
     public PlayerData playerData;
     public List<SceneInfo> sceneInfos;
+    public List<MonsterInfo> monsterInfos;
     public int nowSelRoleId;
     public int nowSelSceneId;
     private GameDataMgr()
@@ -17,6 +18,7 @@ public class GameDataMgr
         roleInfos = JsonMgr.Instance.LoadData<List<RoleInfo>>("RoleInfo");
         playerData = JsonMgr.Instance.LoadData<PlayerData>("PlayerData");
         sceneInfos = JsonMgr.Instance.LoadData<List<SceneInfo>>("SceneInfo");
+        monsterInfos = JsonMgr.Instance.LoadData<List<MonsterInfo>>("MonsterInfo");
     }
     public void SaveMusicData()
     {
