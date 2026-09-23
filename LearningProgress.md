@@ -6,7 +6,7 @@
 - 完成视频不等于完成课程；练习、场景配置和必要运行验证也要完成。
 - 每课备注建议记录错误原因、验证方法、适用边界和下一步。
 - 当前进度：主课程理论阶段已结束；第 1–32、42–44、46–50、63–87、89–96 课已完成，第 33–41、45、51–62 课已跳过；第 88 课代码与概念复查通过但运行边界待确认。
-- 下一步：继续综合实践第 24P“摄像机跟随逻辑”，在 Play Mode 验证角色移动、转向时摄像机能稳定保持后上方跟随；GamePanel 的场景启动创建、金币初始文本和生命值边界留待后续串联时补齐。
+- 下一步：用户已做到综合实践第 30P；保护区攻击层与出怪波次交叠已修正，仍需初始化保护区血量、串联 UI 并在 Unity 中运行验证。第 24～25P 的运行串联也仍待确认。
 - 主课程阶段总结：[Unity 核心主课程阶段总结](Notes/CoreCourse-Summary.md)。
 
 ## 工程目录
@@ -146,12 +146,12 @@
 | 22 | 游戏界面：拼界面 | 已完成 | 已拼出血量、金钱、波次、防御塔选项等游戏 UI；血条改用 Slider，塔选项使用水平与垂直布局组件自动排列，并以“文字＋按钮＋文字”提供可交互入口；详见 [复盘](Notes/Practice-GameScene-UI.md) |
 | 23 | 游戏界面：界面逻辑 | 已完成 | 已完成 GamePanel 初始化、血量/波次/金币更新、退出返回、塔按钮引用和塔选择区域初始隐藏；Slider、自动布局和 Button 方案均为自主调整；详见 [复盘](Notes/Practice-GameScene-UI.md) |
 | 24 | 摄像机跟随逻辑 | 学习中 | 已建立 `CameraMove`，以角色位置和朝向计算后上方目标点并平滑移动、旋转；已修正空引用判断方向及错误使用摄像机自身位置的问题，编译 0 Error，等待 Play Mode 完整验证；详见 [复盘](Notes/Practice-Camera-Follow.md) |
-| 25 | 玩家逻辑 | 未开始 | |
-| 26 | 保护区域逻辑 | 未开始 | |
-| 27 | 怪物逻辑：状态机准备 | 未开始 | |
-| 28 | 怪物逻辑：数据准备 | 未开始 | |
-| 29 | 怪物逻辑：逻辑处理 | 未开始 | |
-| 30 | 出怪点逻辑 | 未开始 | |
+| 25 | 玩家逻辑 | 学习中 | 已由用户编写 `PlayerObject` 的基础输入、动画参数、旋转、攻击事件与金币接口；1～7 号角色 Prefab 均已挂载脚本，2～7 号枪械角色绑定各自武器下的 `gunPoint`，1 号刀角色保持空引用；`UpdateMoney()` 已由 `Start()` 移到 `InitPlayerInfo()`。编译通过，运行串联与攻击结算待验证；详见 [复盘](Notes/Practice-Player-Logic.md) |
+| 26 | 保护区域逻辑 | 待复盘 | 用户已编写 `MainTowerObject` 并在场景保护区挂载；内部血量未初始化，受击时 `GetPanel<GamePanel>()` 也没有注册来源，待修正与运行验证；详见 [26～30P 复查](Notes/Practice-Monster-Logic-Review.md) |
+| 27 | 怪物逻辑：状态机准备 | 待复盘 | 用户手工制作 `Aggresive` 原控制器；使用 Codex AI Agent 加速 `Broken`、`Calm`、`Crawl` 覆盖控制器的重复配置，`Generic` 动画作为共用素材。动画事件名称与怪物脚本对应，实际播放仍待验证；详见 [动画协作过程](Notes/Practice-Monster-Animator.md)与[26～30P 复查](Notes/Practice-Monster-Logic-Review.md) |
+| 28 | 怪物逻辑：数据准备 | 待复盘 | 用户先配置 `MonsterInfo.xlsx` 的 4 条基础记录；Codex AI Agent 补齐其余 12 条并补全数据类。当前 Excel、JSON、C# 均使用 `atkOffset`，16 个组合与资源路径有效；JSON 的 `moveSpeed` 均为 5，而 Excel 保留分类数值，需确认数据来源；详见 [数据配置记录](Notes/Practice-Monster-Data.md) |
+| 29 | 怪物逻辑：逻辑处理 | 待复盘 | 已编写怪物初始化、导航、受伤、死亡和动画事件；`AtkEvent()` 已调用保护区 `Wound()`，场景保护区层已修正为 `MainTower`，待运行验证攻击范围及受击后的血量/UI 链路；详见 [26～30P 复查](Notes/Practice-Monster-Logic-Review.md) |
+| 30 | 出怪点逻辑 | 待复盘 | 已在 `GameScene1` 配置 1 个出怪点，预设 3 波、每波 5 只、可选 ID 1～4；下一波现于本波最后一只生成后预约，单只波次的额外预约边界也已修正。已复盘 `Invoke` 不阻塞当前调用、回调读取当前字段值，待 Play Mode 验证；详见 [26～30P 复查](Notes/Practice-Monster-Logic-Review.md) |
 | 31 | 关卡管理器逻辑 | 未开始 | |
 | 32 | 游戏结束界面 | 未开始 | |
 | 33 | 音效和特效添加 | 未开始 | |
@@ -171,5 +171,5 @@
 | 2D 动画与骨骼 | 42–62 | 部分完成 | Animator 前置内容已学习；旧版 Animation 练习及 2D 骨骼、换装、Spine 暂缓，详见 [路线记录](Notes/StudyRoute-2D-Content.md) |
 | 3D 模型与动画 | 63–86 | 已完成 | [阶段总结](Notes/CoreCourse-Summary.md) |
 | 角色控制与导航 | 87–96 | 待复盘 | 第 88 课代码与概念通过，移动碰撞及不同位置、朝向下的实际画面仍待确认；其余课程已完成 |
-| 综合实践 | 实践 1–38 | 学习中 | 第 21P～23P 已完成，第 24P 摄像机跟随已进入运行验证；GamePanel 自动创建按当前计划延后；详见 [摄像机跟随复盘](Notes/Practice-Camera-Follow.md) |
+| 综合实践 | 实践 1–38 | 学习中 | 用户已做到第 30P；第 21P～23P 已完成，第 24P～25P 仍有运行边界待验证，第 26P～30P 静态复查后暂记待复盘。保护区攻击层、出怪交叠及单只波次边界已修正；血量/UI 串联和怪物运行行为仍待验证。详见 [26～30P 复查](Notes/Practice-Monster-Logic-Review.md) |
 

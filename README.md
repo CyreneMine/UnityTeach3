@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | [UnityTeach3-Project](UnityTeach3-Project/) | 38P 3D 综合实践主工程 | 当前使用 |
 | [UnityTeach3-Theory](UnityTeach3-Theory/) | 96P 理论练习工程 | 已结束，默认只读 |
-| [学习进度](LearningProgress.md) | 主课程与综合实践课次记录 | 第 24P 摄像机跟随学习中 |
+| [学习进度](LearningProgress.md) | 主课程与综合实践课次记录 | 已做到第 30P，运行验证待完成 |
 | [主课程总结](Notes/CoreCourse-Summary.md) | 96P 学习成果、取舍和待补边界 | 已完成 |
 | [协作规则](AGENTS.md) | 双工程检查、修改和 Git 规则 | 当前有效 |
 | [工作区记忆](CODEX_MEMORY.md) | 路径映射与跨会话稳定约定 | 当前有效 |
@@ -48,7 +48,7 @@ UnityTeach3/
 
 - Unity 核心主课程 96P 已按当前学习路线完成：73 课完成，22 课因 2D 专项或旧版内容主动暂缓，第 88 课保留运行边界复盘。
 - 已完成的重点实践包括资源加载、2D 物理、Animator 状态机与混合树、动画分层与 IK、CharacterController、NavMesh 寻路和动态障碍。
-- 当前进入 38P 综合实践：第 21P～23P 已完成，第 24P“摄像机跟随逻辑”已经实现基础代码并进入运行验证；GamePanel 的场景启动创建按当前计划延后。
+- 当前已做到 38P 综合实践第 30P；第 26～30P 的保护区、怪物和出怪点已编写，保护区攻击层和当前配置下的波次交叠已修正，血量/UI 串联与运行表现仍待验证，暂记为待复盘。第 24～25P 的运行边界也仍待验证；详见 [26～30P 复查](Notes/Practice-Monster-Logic-Review.md)。
 - 主课程阶段总结见 [Notes/CoreCourse-Summary.md](Notes/CoreCourse-Summary.md)。
 - 综合实践 UI 起步阶段复盘见 [Notes/Practice-UI-Foundation-BeginPanel.md](Notes/Practice-UI-Foundation-BeginPanel.md)。
 - 提示面板实现与检查记录见 [Notes/Practice-TipPanel.md](Notes/Practice-TipPanel.md)。
@@ -57,6 +57,7 @@ UnityTeach3/
 - 场景选择面板与开始场景阶段记录见 [Notes/Practice-ChooseScenePanel.md](Notes/Practice-ChooseScenePanel.md)。
 - 游戏场景搭建与 UI 设计取舍见 [Notes/Practice-GameScene-UI.md](Notes/Practice-GameScene-UI.md)。
 - 摄像机跟随实现与调试记录见 [Notes/Practice-Camera-Follow.md](Notes/Practice-Camera-Follow.md)。
+- 玩家逻辑与 1～7 号角色 Prefab 组件配置见 [Notes/Practice-Player-Logic.md](Notes/Practice-Player-Logic.md)。
 
 ## 学习方式
 
