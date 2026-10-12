@@ -2,7 +2,7 @@
 
 ## 复查范围与结论
 
-用户已做到第 30P，且表示这一课已做完。本次检查了 `MainTowerObject`、`MonsterObject`、`MonsterPoint`、`GameDataMgr`、16 条怪物 JSON、四个怪物 Prefab、四类 Animator Controller 和 `GameScene1` 的序列化配置。`Assembly-CSharp` 编译为 0 Error；没有完成 Unity Play Mode 运行验收，因此第 26～30P 暂记为“待复盘”。本次只检查并记录，没有修改用户的游戏脚本、Prefab 或场景。
+用户当时已做到第 30P，且表示这一课已做完。本次检查了 `MainTowerObject`、`MonsterObject`、`MonsterPoint`、`GameDataMgr`、16 条怪物 JSON、四个怪物 Prefab、四类 Animator Controller 和 `GameScene1` 的序列化配置。`Assembly-CSharp` 编译为 0 Error；当时没有完成 Unity Play Mode 运行验收，因此第 26～30P 暂记为“待复盘”。本次只检查并记录，没有修改用户的游戏脚本、Prefab 或场景。以下“待修正”保留当时的发现；第 31P 后的更正见文末。
 
 ## 已核对的部分
 
@@ -31,3 +31,11 @@
 ## 最小运行验证
 
 先处理保护区血量/UI 初始化，再进入 `GameScene1` Play Mode：观察首波 5 只是否按 1.5 秒间隔生成、出场后是否开始寻路、靠近保护区时攻击事件是否命中并正确扣血。随后确认第二波在首波最后一只生成约 5 秒后开始，以及受伤和死亡事件是否符合当前阶段的预期。
+
+## 第 31P 后续更正
+
+- 上文“保护区血量尚未初始化、GamePanel 没有登记”是第 30P 时的状态。现在 `GameLevelMgr.InitInfo()` 先调用 `UIManager.ShowPanel<GamePanel>()`，再实例化玩家并调用 `MainTowerObject.UpdateHp(sceneInfo.towerHp, sceneInfo.towerHp)`；这条初始化链已接入，单局运行结果以用户反馈为准。
+- 上文“四个怪物 Prefab 没有 Collider、仍在 Default 层”已失效。当前本地 `Z1`～`Z4` Prefab 均在 `Monster` 层并有根节点 CapsuleCollider；这些模型 Prefab 依资源排除规则不进入 Git。
+- 上文“玩家命中后伤害还是 TODO、怪物死亡事件没有销毁”已失效。`PlayerObject.KnifeEvent()` 与 `ShootEvent()` 已调用 `MonsterObject.Wound(atk)`；`MonsterObject.DeadEvent()` 现会减少关卡存活怪物数、检查胜利并销毁对象。刀角色当前配置的命中由用户报告正常；枪械及全波次运行边界还需分别核对。
+- 上文每波 5 只、共 3 波是第 30P 当时的场景配置；第 31P 的 `GameScene1` 已调为每波 2 只、共 2 波，后续运行观察应以新配置为准。
+- 关卡管理器新增内容与仍待验证的多场景/重复进入边界详见 [第 31P 记录](Practice-GameLevelMgr.md)。

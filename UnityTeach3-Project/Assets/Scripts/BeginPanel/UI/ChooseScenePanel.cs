@@ -29,9 +29,11 @@ public class ChooseScenePanel : BasePanel
         btnStart.onClick.AddListener(() =>
         {
             UIManager.Instance.HidePanel<ChooseScenePanel>();
-            //TODO 进入游戏场景
-            SceneManager.LoadScene(GameDataMgr.Instance.sceneInfos[nowSceneId].sceneName);
-            
+            AsyncOperation ao = SceneManager.LoadSceneAsync(GameDataMgr.Instance.sceneInfos[nowSceneId].sceneName);
+            ao.completed += (obj) =>
+            {
+                GameLevelMgr.Instance.InitInfo();
+            };
         });
         btnBack.onClick.AddListener(() =>
         {

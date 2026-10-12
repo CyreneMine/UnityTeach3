@@ -76,6 +76,7 @@ public class ChoosePanel : BasePanel
         }
         nowRoleObj = GameObject.Instantiate(Resources.Load<GameObject>(GameDataMgr.Instance.roleInfos[nowRoleId].res), heroPos.position,heroPos.rotation);
         RoleInfo nowRole = GameDataMgr.Instance.roleInfos[nowRoleId];
+        Destroy(nowRoleObj.GetComponent<PlayerObject>());
         if (nowRole.lockMoney >= 0 && !GameDataMgr.Instance.playerData.unLockRoleIds.Contains(nowRoleId))
         {
             btnUnLock.gameObject.SetActive(true);

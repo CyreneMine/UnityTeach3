@@ -6,7 +6,7 @@
 - 完成视频不等于完成课程；练习、场景配置和必要运行验证也要完成。
 - 每课备注建议记录错误原因、验证方法、适用边界和下一步。
 - 当前进度：主课程理论阶段已结束；第 1–32、42–44、46–50、63–87、89–96 课已完成，第 33–41、45、51–62 课已跳过；第 88 课代码与概念复查通过但运行边界待确认。
-- 下一步：用户已做到综合实践第 30P；保护区攻击层与出怪波次交叠已修正，仍需初始化保护区血量、串联 UI 并在 Unity 中运行验证。第 24～25P 的运行串联也仍待确认。
+- 下一步：用户确认综合实践第 31P“关卡管理器逻辑”已完成；关卡初始化现会设置保护区血量并创建 GamePanel，怪物死亡会更新存活数并检查胜利。第 24～30P 的其余运行边界、场景选择编号同步及重复进入关卡仍待复盘；接下来是第 32P 游戏结束界面。
 - 主课程阶段总结：[Unity 核心主课程阶段总结](Notes/CoreCourse-Summary.md)。
 
 ## 工程目录
@@ -146,13 +146,13 @@
 | 22 | 游戏界面：拼界面 | 已完成 | 已拼出血量、金钱、波次、防御塔选项等游戏 UI；血条改用 Slider，塔选项使用水平与垂直布局组件自动排列，并以“文字＋按钮＋文字”提供可交互入口；详见 [复盘](Notes/Practice-GameScene-UI.md) |
 | 23 | 游戏界面：界面逻辑 | 已完成 | 已完成 GamePanel 初始化、血量/波次/金币更新、退出返回、塔按钮引用和塔选择区域初始隐藏；Slider、自动布局和 Button 方案均为自主调整；详见 [复盘](Notes/Practice-GameScene-UI.md) |
 | 24 | 摄像机跟随逻辑 | 学习中 | 已建立 `CameraMove`，以角色位置和朝向计算后上方目标点并平滑移动、旋转；已修正空引用判断方向及错误使用摄像机自身位置的问题，编译 0 Error，等待 Play Mode 完整验证；详见 [复盘](Notes/Practice-Camera-Follow.md) |
-| 25 | 玩家逻辑 | 学习中 | 已由用户编写 `PlayerObject` 的基础输入、动画参数、旋转、攻击事件与金币接口；1～7 号角色 Prefab 均已挂载脚本，2～7 号枪械角色绑定各自武器下的 `gunPoint`，1 号刀角色保持空引用；`UpdateMoney()` 已由 `Start()` 移到 `InitPlayerInfo()`。编译通过，运行串联与攻击结算待验证；详见 [复盘](Notes/Practice-Player-Logic.md) |
-| 26 | 保护区域逻辑 | 待复盘 | 用户已编写 `MainTowerObject` 并在场景保护区挂载；内部血量未初始化，受击时 `GetPanel<GamePanel>()` 也没有注册来源，待修正与运行验证；详见 [26～30P 复查](Notes/Practice-Monster-Logic-Review.md) |
+| 25 | 玩家逻辑 | 学习中 | 用户编写 `PlayerObject` 的输入、动画、旋转、攻击与金币接口；1～7 号角色 Prefab 均已挂载脚本，2～7 号绑定各自武器下的 `gunPoint`，1 号刀角色保持空引用。关卡初始化现先创建 GamePanel，刀攻击已调用怪物 `Wound()` 且用户报告命中正常；枪械和预览等边界仍待验证；详见 [复盘](Notes/Practice-Player-Logic.md) |
+| 26 | 保护区域逻辑 | 待复盘 | 用户已编写并挂载 `MainTowerObject`；第 31P 的 `GameLevelMgr.InitInfo()` 现会设置初始血量，GamePanel 也通过 UIManager 创建并登记，原先的空值链路已修正。怪物攻击扣血及失败结算的完整运行边界仍待复盘；详见 [26～30P 复查](Notes/Practice-Monster-Logic-Review.md) |
 | 27 | 怪物逻辑：状态机准备 | 待复盘 | 用户手工制作 `Aggresive` 原控制器；使用 Codex AI Agent 加速 `Broken`、`Calm`、`Crawl` 覆盖控制器的重复配置，`Generic` 动画作为共用素材。动画事件名称与怪物脚本对应，实际播放仍待验证；详见 [动画协作过程](Notes/Practice-Monster-Animator.md)与[26～30P 复查](Notes/Practice-Monster-Logic-Review.md) |
 | 28 | 怪物逻辑：数据准备 | 待复盘 | 用户先配置 `MonsterInfo.xlsx` 的 4 条基础记录；Codex AI Agent 补齐其余 12 条并补全数据类。当前 Excel、JSON、C# 均使用 `atkOffset`，16 个组合与资源路径有效；JSON 的 `moveSpeed` 均为 5，而 Excel 保留分类数值，需确认数据来源；详见 [数据配置记录](Notes/Practice-Monster-Data.md) |
 | 29 | 怪物逻辑：逻辑处理 | 待复盘 | 已编写怪物初始化、导航、受伤、死亡和动画事件；`AtkEvent()` 已调用保护区 `Wound()`，场景保护区层已修正为 `MainTower`，待运行验证攻击范围及受击后的血量/UI 链路；详见 [26～30P 复查](Notes/Practice-Monster-Logic-Review.md) |
-| 30 | 出怪点逻辑 | 待复盘 | 已在 `GameScene1` 配置 1 个出怪点，预设 3 波、每波 5 只、可选 ID 1～4；下一波现于本波最后一只生成后预约，单只波次的额外预约边界也已修正。已复盘 `Invoke` 不阻塞当前调用、回调读取当前字段值，待 Play Mode 验证；详见 [26～30P 复查](Notes/Practice-Monster-Logic-Review.md) |
-| 31 | 关卡管理器逻辑 | 未开始 | |
+| 30 | 出怪点逻辑 | 待复盘 | `GameScene1` 有 1 个出怪点，可选 ID 1～4；第 30P 复查时为 3 波、每波 5 只，第 31P 工作区改为 2 波、每波 2 只。下一波于本波最后一只生成后预约，单只波次边界已修正；已复盘 `Invoke` 的非阻塞调度，完整波次运行仍待复盘；详见 [26～30P 复查](Notes/Practice-Monster-Logic-Review.md) |
+| 31 | 关卡管理器逻辑 | 已完成 | 用户确认本课已完成；已接入场景加载后的角色/面板/保护区初始化、出怪点登记与波次统计、怪物死亡后的存活数和胜利检查。Codex 静态复查及 C# 编译 0 Error；Unity 单局运行结果依据用户反馈，多场景选择编号同步与重复进入关卡待后续复盘；详见 [第 31P 记录](Notes/Practice-GameLevelMgr.md) |
 | 32 | 游戏结束界面 | 未开始 | |
 | 33 | 音效和特效添加 | 未开始 | |
 | 34 | 防御塔逻辑：数据模型准备 | 未开始 | |

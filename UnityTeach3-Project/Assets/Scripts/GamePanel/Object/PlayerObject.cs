@@ -51,21 +51,28 @@ public class PlayerObject : MonoBehaviour
 
     public void KnifeEvent()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position + transform.forward +transform.up,1,1 << LayerMask.NameToLayer("Monster"));
-        //TODO 处理攻击到的怪物 让他们受伤
+        Collider[] colliders = Physics.OverlapSphere(transform.position + transform.forward+transform.up,1,1 << LayerMask.NameToLayer("Monster"));
         foreach (Collider i in colliders)
         {
-            
+            MonsterObject enemy =  i.gameObject.GetComponent<MonsterObject>();
+            if (enemy != null)
+            {
+                enemy.Wound(atk);
+                break;
+            }
         }
     }
-
     public void ShootEvent()
     {
         RaycastHit[] raycastHits = Physics.RaycastAll(new Ray(gunPoint.position,gunPoint.forward),1000,1<<LayerMask.NameToLayer("Monster"));
-        //TODO 处理攻击到的怪物 让他们受伤
         foreach (RaycastHit hit in raycastHits)
         {
-            
+            MonsterObject enemy = hit.transform.gameObject.GetComponent<MonsterObject>();
+            if (enemy != null)
+            {
+                enemy.Wound(atk);
+                break;
+            }
         }
     }
 }

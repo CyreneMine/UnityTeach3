@@ -19,8 +19,9 @@
 - 两个工程均使用 Unity `6000.3.10f1`。
 - 96P 主课程理论阶段已经结束：73 课已完成，22 课按 3D 学习路线主动暂缓，第 88 课保留运行边界复盘。
 - 38P 综合实践的第 21P～23P 已完成，第 24P“摄像机跟随逻辑”学习中。`CameraMove` 已挂到 `GameScene1` 摄像机，以角色位置和朝向计算后上方目标点；已修正 `target` 空值判断写反及以摄像机自身位置计算跟随点的问题，编译 0 Error，仍需 Play Mode 验证移动与转向跟随。GamePanel 的场景启动创建按用户决定暂缓。
-- 第 25P“玩家逻辑”学习中：用户编写 `PlayerObject`，Codex 为 `Resources/Role/1～7.prefab` 根对象配置该组件；2～7 号的 `gunPoint` 指向各自武器模型子对象，1 号刀角色保持空引用。用户要求把 `UpdateMoney()` 从 `Start()` 移到 `InitPlayerInfo()`，已执行。选角预览与游戏玩家共用这些 Prefab，组件会在两处启用；后续仍需在 GamePanel 经 UIManager 创建后初始化玩家数据并验证运行行为。详见 `Notes/Practice-Player-Logic.md`。
-- 用户已做到综合实践第 30P；第 26～30P 的脚本、动画、数据与场景配置已静态复查并编译通过。保护区场景实例层已修正为 `MainTower`，`MonsterObject.AtkEvent()` 已调用 `Wound()`，`UpdateHp()` 已能赋值但尚未在整体联调中调用；`GamePanel` 未在 UIManager 登记。出怪点已改为本波最后一只生成后再预约下一波，且首次生怪前递减剩余波数，交叠和单只波次额外预约均已修正。用户已复盘 `Invoke` 的非阻塞调度及回调读取字段时机。尚未完成 Play Mode 验证，故暂记为待复盘。Excel/JSON/C# 的 `atkOffset` 字段已同步；JSON 的 `moveSpeed` 全部为 5，与 Excel 分类数值不同，需确认是否有意。`Resources/Monster/` 的本地模型 Prefab 及 `.meta` 不入库。详见 `Notes/Practice-Monster-Logic-Review.md`。
+- 第 25P“玩家逻辑”仍记为学习中：用户编写 `PlayerObject`，Codex 为 `Resources/Role/1～7.prefab` 根对象配置该组件；2～7 号的 `gunPoint` 指向各自武器模型子对象，1 号刀角色保持空引用。`UpdateMoney()` 已从 `Start()` 移到 `InitPlayerInfo()`；第 31P 关卡流程现会先经 UIManager 创建 GamePanel，再初始化玩家。刀角色缩放与 CharacterController 经用户调整后，用户报告半径 1 的刀攻击命中正常；枪械与选角预览仍待验证。详见 `Notes/Practice-Player-Logic.md`。
+- 第 26～30P 初次静态复查时发现的保护区初始化、GamePanel 登记和玩家攻击伤害 TODO，后来随第 31P 的关卡初始化及战斗联调得到修正；初次检查过程与 `Invoke` 非阻塞调度复盘保留在 `Notes/Practice-Monster-Logic-Review.md`。第 26～30P 的其余运行边界仍待单独复盘。Excel/JSON/C# 的 `atkOffset` 字段已同步；JSON 的 `moveSpeed` 全部为 5，与 Excel 分类数值不同，需确认是否有意。`Resources/Monster/` 的本地模型 Prefab 及 `.meta` 不入库。
+- 用户确认综合实践第 31P“关卡管理器逻辑”已完成。`ChooseScenePanel` 场景加载回调调用 `GameLevelMgr.InitInfo()`，后者创建/登记 GamePanel、实例化玩家、设置摄像机目标和保护区血量；出怪点登记、波次统计、怪物存活数及死亡后的胜利检查已连通。Codex 静态检查与 C# 编译 0 Error；Unity 单局运行以用户反馈为准。当前 `nowSelSceneId` 未随场景选择同步，静态 `GameLevelMgr` 在重复进入关卡时未重置，属于后续边界。详见 `Notes/Practice-GameLevelMgr.md`。
 
 ## 协作约定
 

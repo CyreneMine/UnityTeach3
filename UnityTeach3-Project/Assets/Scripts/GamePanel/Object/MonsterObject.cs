@@ -46,6 +46,7 @@ public class MonsterObject : MonoBehaviour
         _agent.isStopped = true;
         _animator.SetBool("Dead",true);
         //TODO 加钱  后续在关卡管理器完善
+        
     }
     public void BornOver()
     {
@@ -54,6 +55,9 @@ public class MonsterObject : MonoBehaviour
     public void DeadEvent()
     {
         //TODO 死亡后倒数然后销毁 后续在关卡管理器完成
+        GameLevelMgr.Instance.ChangeMonsterCount(-1);
+        GameLevelMgr.Instance.CheckOver();
+        Destroy(gameObject);
     }
 
     public void AtkEvent()

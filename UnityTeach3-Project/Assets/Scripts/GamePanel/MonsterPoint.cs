@@ -14,6 +14,8 @@ public class MonsterPoint : MonoBehaviour
     {
         _remainingWave = totalWave;
         Invoke("CreateWave",startTime);
+        GameLevelMgr.Instance.InitMonsterPoint(this);
+        GameLevelMgr.Instance.UpdateMaxCount(totalWave);
     }
 
     private void CreateWave()
@@ -21,6 +23,7 @@ public class MonsterPoint : MonoBehaviour
         _monsterId = spawnMonsterIdList[Random.Range(0,spawnMonsterIdList.Count)];
         _waitSpawnCount = maxSpawnCount;
         --_remainingWave;
+        GameLevelMgr.Instance.ChangeNowWaveCount(1);
         CreateMonster();
     }
     private void CreateMonster()
@@ -30,6 +33,7 @@ public class MonsterPoint : MonoBehaviour
         MonsterObject monsterScript = obj.AddComponent<MonsterObject>();
         monsterScript.InitInfo(monsterInfo);
         --_waitSpawnCount;
+        GameLevelMgr.Instance.ChangeMonsterCount(1);
         if (_waitSpawnCount >0)
         {
             Invoke("CreateMonster",spawnWaitTime);

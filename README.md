@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | [UnityTeach3-Project](UnityTeach3-Project/) | 38P 3D 综合实践主工程 | 当前使用 |
 | [UnityTeach3-Theory](UnityTeach3-Theory/) | 96P 理论练习工程 | 已结束，默认只读 |
-| [学习进度](LearningProgress.md) | 主课程与综合实践课次记录 | 已做到第 30P，运行验证待完成 |
+| [学习进度](LearningProgress.md) | 主课程与综合实践课次记录 | 第 31P 已完成，接下来第 32P |
 | [主课程总结](Notes/CoreCourse-Summary.md) | 96P 学习成果、取舍和待补边界 | 已完成 |
 | [协作规则](AGENTS.md) | 双工程检查、修改和 Git 规则 | 当前有效 |
 | [工作区记忆](CODEX_MEMORY.md) | 路径映射与跨会话稳定约定 | 当前有效 |
@@ -48,7 +48,7 @@ UnityTeach3/
 
 - Unity 核心主课程 96P 已按当前学习路线完成：73 课完成，22 课因 2D 专项或旧版内容主动暂缓，第 88 课保留运行边界复盘。
 - 已完成的重点实践包括资源加载、2D 物理、Animator 状态机与混合树、动画分层与 IK、CharacterController、NavMesh 寻路和动态障碍。
-- 当前已做到 38P 综合实践第 30P；第 26～30P 的保护区、怪物和出怪点已编写，保护区攻击层和当前配置下的波次交叠已修正，血量/UI 串联与运行表现仍待验证，暂记为待复盘。第 24～25P 的运行边界也仍待验证；详见 [26～30P 复查](Notes/Practice-Monster-Logic-Review.md)。
+- 38P 综合实践第 31P“关卡管理器逻辑”已由用户确认完成：角色、游戏面板和保护区初始化已接入场景加载，出怪点登记、波次/存活数统计及胜利检查已串联；详见 [第 31P 记录](Notes/Practice-GameLevelMgr.md)。第 24～30P 的其余运行边界仍按原记录继续复盘。
 - 主课程阶段总结见 [Notes/CoreCourse-Summary.md](Notes/CoreCourse-Summary.md)。
 - 综合实践 UI 起步阶段复盘见 [Notes/Practice-UI-Foundation-BeginPanel.md](Notes/Practice-UI-Foundation-BeginPanel.md)。
 - 提示面板实现与检查记录见 [Notes/Practice-TipPanel.md](Notes/Practice-TipPanel.md)。

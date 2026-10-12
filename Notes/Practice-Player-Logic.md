@@ -2,7 +2,7 @@
 
 ## 当前进度
 
-- 第 25P“玩家逻辑”学习中。基础代码和角色 Prefab 绑定已完成，攻击结算、游戏界面初始化顺序和实际运行仍待验证。
+- 第 25P“玩家逻辑”仍记为学习中。基础代码、角色 Prefab 绑定、关卡内游戏界面初始化和命中后的 `Wound()` 调用已接通；刀角色当前配置的命中由用户报告正常。枪械角色、选角预览及多次进入的运行边界尚未完整验证。
 - `PlayerObject` 的输入、动画、旋转、攻击事件与金币方法由用户编写；Codex 按用户要求完成 1～7 号角色 Prefab 的重复组件配置与引用检查。
 
 ## 当前实现与配置
@@ -24,16 +24,16 @@
 
 ## 金币初始化时机
 
-用户要求把 `UpdateMoney()` 从 `PlayerObject.Start()` 移入 `InitPlayerInfo(int atk, int money)`，现已完成。这样选角面板为了预览而实例化角色时，不会因 `Start()` 访问尚未创建的 `GamePanel` 而直接报空引用。正式玩家初始化时，应先通过 `UIManager.ShowPanel<GamePanel>()` 建立并登记游戏面板，再调用 `InitPlayerInfo()`；否则 `GetPanel<GamePanel>()` 仍会返回空值。当前把 GamePanel 放在场景中的做法不会自动把它登记到 UIManager。
+用户要求把 `UpdateMoney()` 从 `PlayerObject.Start()` 移入 `InitPlayerInfo(int atk, int money)`，现已完成。这样选角面板为了预览而实例化角色时，不会因 `Start()` 访问尚未创建的 `GamePanel` 而直接报空引用。第 31P 的 `GameLevelMgr.InitInfo()` 已先调用 `UIManager.ShowPanel<GamePanel>()` 建立并登记面板，再实例化玩家并调用 `InitPlayerInfo()`；原先仅在场景中放置 GamePanel、无法被 UIManager 查询的问题已通过这条新流程修正。
 
 ## 验证与边界
 
 - 七个 Prefab 均已静态核对：每个根对象恰有一个 `PlayerObject`，脚本 GUID、Animator 同级关系、枪口引用和枪口所在武器层级都正确；1 号的空引用是近战角色的有意配置。
-- C# 独立编译为 0 Error；Unity Play Mode 中的选角预览、角色实例化、射击射线和金币文本尚未完整验证。
+- C# 独立编译为 0 Error；用户确认第 31P 的单局关卡流程已完成，刀攻击命中正常。Codex 尚未独立复现 Unity Play Mode；选角预览、射击射线和重复进入等边界尚未完整验证。
 - `PlayerObject.Update()` 目前对选角预览角色也会执行，因此菜单中按键或点击可能触发预览角色的旋转及动画。后续需要区分预览角色与正式玩家的输入启用状态。
-- `KnifeEvent()` 和 `ShootEvent()` 已建立检测入口，但命中后的伤害结算仍是 TODO；这不计为战斗功能完成。
+- `KnifeEvent()` 和 `ShootEvent()` 现已在命中 `MonsterObject` 后调用 `Wound(atk)`，此前“伤害结算仍是 TODO”的结论已失效。刀角色曾出现半径 1 时 `OverlapSphere` 返回 0、半径 3 时能检测到的空间范围问题；用户随后将角色缩放改为 0.5 并调整 CharacterController，报告当前命中正常。当前保存的刀攻击代码仍使用 `transform.position + transform.forward + transform.up`、半径 1；枪械角色的实际运行仍需单独验证。
 - 1 号角色若错误触发 `ShootEvent()`，空的 `gunPoint` 会报空引用；当前按近战角色处理，后续应核对动画事件只调用 `KnifeEvent()`。
 
 ## 下一步
 
-在 Unity 中分别运行选角界面和 `GameScene1`：确认选角无空引用，正式玩家只有一个启用的 `PlayerObject`，并在通过 UIManager 创建 GamePanel 后测试 `InitPlayerInfo()` 的金币显示。
+在 Unity 中验证一个枪械角色的射线是否由对应 `gunPoint` 发出并正确触发怪物受伤；选角预览与重复进入关卡的边界另行复盘。
