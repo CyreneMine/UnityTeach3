@@ -26,6 +26,8 @@
 /UnityTeach3-Project/[Uu]ser[Ss]ettings/
 /UnityTeach3-Project/[Mm]emoryCaptures/
 /UnityTeach3-Project/[Rr]ecordings/
+/UnityTeach3-Project/Assets/_Recovery/
+/UnityTeach3-Project/Assets/_Recovery.meta
 /.secrets/
 
 # Local Asset Store/tutorial resources (keep licenses local)
@@ -41,6 +43,12 @@
 /UnityTeach3-Project/Assets/Resources/SceneImg.meta
 /UnityTeach3-Project/Assets/Resources/Monster/
 /UnityTeach3-Project/Assets/Resources/Monster.meta
+/UnityTeach3-Project/Assets/Resources/Tower/
+/UnityTeach3-Project/Assets/Resources/Tower.meta
+/UnityTeach3-Project/Assets/Resources/TowerImg/
+/UnityTeach3-Project/Assets/Resources/TowerImg.meta
+/UnityTeach3-Project/Assets/Resources/eff/
+/UnityTeach3-Project/Assets/Resources/eff.meta
 /UnityTeach3-Project/Assets/Scripts/Json/LitJson/
 /UnityTeach3-Project/Assets/Scripts/Json/LitJson.meta
 /UnityTeach3-Theory/Assets/Standard Assets/
