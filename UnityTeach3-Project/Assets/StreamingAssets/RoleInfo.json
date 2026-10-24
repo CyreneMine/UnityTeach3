@@ -1,5 +1,5 @@
 [
-{"id":1,"res":"Role/1","atk":2,"tips":"小刀","lockMoney":0,"type":1,"hitEff":"eff/1"},
+{"id":1,"res":"Role/1","atk":5,"tips":"小刀","lockMoney":0,"type":1,"hitEff":"eff/1"},
 {"id":2,"res":"Role/2","atk":6,"tips":"机枪","lockMoney":400,"type":2,"hitEff":"eff/1"},
 {"id":3,"res":"Role/3","atk":8,"tips":"狙击枪","lockMoney":400,"type":2,"hitEff":"eff/1"},
 {"id":4,"res":"Role/4","atk":4,"tips":"手枪","lockMoney":0,"type":2,"hitEff":"eff/1"},
