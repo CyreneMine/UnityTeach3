@@ -21,16 +21,16 @@ public abstract class BasePanel : MonoBehaviour
     }
 
     public abstract void Init();
-    void Update()
+    protected virtual void Update()
     {
         if (_isShow && _canvasGroup.alpha < 1)
         {
-            _canvasGroup.alpha += _alphaSpeed * Time.deltaTime;
+            _canvasGroup.alpha += _alphaSpeed * Time.unscaledDeltaTime;
             if (_canvasGroup.alpha >= 1)
                 _canvasGroup.alpha = 1;
         }else if (!_isShow && _canvasGroup.alpha > 0)
         {
-            _canvasGroup.alpha -= _alphaSpeed * Time.deltaTime;
+            _canvasGroup.alpha -= _alphaSpeed * Time.unscaledDeltaTime;
             if (_canvasGroup.alpha <= 0)
             {
                 _canvasGroup.alpha = 0;

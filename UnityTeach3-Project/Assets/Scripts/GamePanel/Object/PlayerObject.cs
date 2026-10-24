@@ -6,7 +6,7 @@ public class PlayerObject : MonoBehaviour
     public Transform gunPoint;
     private float _roundSpeed = 50f;
     private Animator _animator;
-    private int atk,money;
+    public int atk,money;
     private void Start()
     {
         _animator =  GetComponent<Animator>();
@@ -29,6 +29,8 @@ public class PlayerObject : MonoBehaviour
         {
             _animator.SetLayerWeight(1,0);
         }
+
+        
     }
     //初始化属性
     public void InitPlayerInfo(int atk,int money)
@@ -40,6 +42,7 @@ public class PlayerObject : MonoBehaviour
     //更新面板金币显示
     public void UpdateMoney()
     {
+        print($"传入的:{money}");
         UIManager.Instance.GetPanel<GamePanel>().UpdateMoney(money);
     }
     //留给外部用来更新金币的方法
@@ -51,11 +54,12 @@ public class PlayerObject : MonoBehaviour
 
     public void KnifeEvent()
     {
+        GameDataMgr.Instance.PlaySound("Music/Knife");
         Collider[] colliders = Physics.OverlapSphere(transform.position + transform.forward+transform.up,1,1 << LayerMask.NameToLayer("Monster"));
         foreach (Collider i in colliders)
         {
             MonsterObject enemy =  i.gameObject.GetComponent<MonsterObject>();
-            if (enemy != null)
+            if (enemy != null && !enemy._isDead)
             {
                 enemy.Wound(atk);
                 break;
@@ -64,13 +68,16 @@ public class PlayerObject : MonoBehaviour
     }
     public void ShootEvent()
     {
+        GameDataMgr.Instance.PlaySound("Music/Gun");
         RaycastHit[] raycastHits = Physics.RaycastAll(new Ray(gunPoint.position,gunPoint.forward),1000,1<<LayerMask.NameToLayer("Monster"));
         foreach (RaycastHit hit in raycastHits)
         {
             MonsterObject enemy = hit.transform.gameObject.GetComponent<MonsterObject>();
-            if (enemy != null)
+            if (enemy != null && !enemy._isDead)
             {
                 enemy.Wound(atk);
+                GameObject effObj = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>(GameDataMgr.Instance.roleInfos[GameDataMgr.Instance.nowSelRoleId].hitEff));
+                effObj.transform.position = hit.point;
                 break;
             }
         }

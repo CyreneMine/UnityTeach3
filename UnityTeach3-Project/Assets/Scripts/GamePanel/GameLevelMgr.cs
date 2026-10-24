@@ -45,6 +45,7 @@ public class GameLevelMgr
     }
     public bool CheckOver()
     {
+        Debug.Log($"剩下:{aliveMonsterCount}");
         foreach (MonsterPoint point in points)
         {
             if (!point.CheckOver())
@@ -54,5 +55,11 @@ public class GameLevelMgr
             return false;
         Debug.Log("游戏胜利");
         return true;
+    }
+
+    public void ClearInfo()
+    {
+        points.Clear();
+        maxWaveCount = nowWaveCount = aliveMonsterCount = 0;
     }
 }

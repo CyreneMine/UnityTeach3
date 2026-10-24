@@ -27,6 +27,8 @@ public class MainTowerObject : MonoBehaviour
         {
             _hp = 0;
             _isDead = true;
+            GameOverPanel panel = UIManager.Instance.ShowPanel<GameOverPanel>();
+            panel.InitInfo((int)(GameLevelMgr.Instance.player.money * 0.5f),false);
         }
         UpdateHp(_hp,_maxHp);
     }

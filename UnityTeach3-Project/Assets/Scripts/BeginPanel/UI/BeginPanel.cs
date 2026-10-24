@@ -6,6 +6,7 @@ public class BeginPanel : BasePanel
     public Button btnStart,btnSetting,btnAbout,btnQuit;
     public override void Init()
     {
+        Time.timeScale = 1;
         btnStart.onClick.AddListener((() =>
         {
             Camera.main.GetComponent<CameraAnimator>().TurnLeft(() =>

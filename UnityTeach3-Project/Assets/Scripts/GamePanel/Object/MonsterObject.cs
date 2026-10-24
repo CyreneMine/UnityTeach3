@@ -8,7 +8,7 @@ public class MonsterObject : MonoBehaviour
     private NavMeshAgent _agent;
     private MonsterInfo  _monsterInfo;
     private int _hp;
-    private bool _isDead;
+    public bool _isDead;
     private float frontTime;
     private void Awake()
     {
@@ -34,8 +34,8 @@ public class MonsterObject : MonoBehaviour
             Dead();
         }
         else
-        {//TODO 后续播放音效
-            
+        {
+            GameDataMgr.Instance.PlaySound("Music/Wound");
         }
         _animator.SetTrigger("Wound");
     }
@@ -45,8 +45,8 @@ public class MonsterObject : MonoBehaviour
         _isDead = true;
         _agent.isStopped = true;
         _animator.SetBool("Dead",true);
-        //TODO 加钱  后续在关卡管理器完善
-        
+        GameLevelMgr.Instance.player.AddMoney(150);
+        GameDataMgr.Instance.PlaySound("Music/dead");
     }
     public void BornOver()
     {
@@ -54,9 +54,12 @@ public class MonsterObject : MonoBehaviour
     }
     public void DeadEvent()
     {
-        //TODO 死亡后倒数然后销毁 后续在关卡管理器完成
         GameLevelMgr.Instance.ChangeMonsterCount(-1);
-        GameLevelMgr.Instance.CheckOver();
+        if (GameLevelMgr.Instance.CheckOver())
+        {
+            GameOverPanel panel = UIManager.Instance.ShowPanel<GameOverPanel>();
+            panel.InitInfo((int)(GameLevelMgr.Instance.player.money),true);
+        }
         Destroy(gameObject);
     }
 

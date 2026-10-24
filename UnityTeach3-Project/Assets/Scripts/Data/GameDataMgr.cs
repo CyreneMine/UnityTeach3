@@ -10,6 +10,7 @@ public class GameDataMgr
     public PlayerData playerData;
     public List<SceneInfo> sceneInfos;
     public List<MonsterInfo> monsterInfos;
+    public List<TowerInfo> towerInfos;
     public int nowSelRoleId;
     public int nowSelSceneId;
     private GameDataMgr()
@@ -19,6 +20,7 @@ public class GameDataMgr
         playerData = JsonMgr.Instance.LoadData<PlayerData>("PlayerData");
         sceneInfos = JsonMgr.Instance.LoadData<List<SceneInfo>>("SceneInfo");
         monsterInfos = JsonMgr.Instance.LoadData<List<MonsterInfo>>("MonsterInfo");
+        towerInfos = JsonMgr.Instance.LoadData<List<TowerInfo>>("TowerInfo");
     }
     public void SaveMusicData()
     {
@@ -31,5 +33,16 @@ public class GameDataMgr
     public void SavePlayerData()
     {
         JsonMgr.Instance.SaveData(playerData, "PlayerData");
+    }
+
+    public void PlaySound(string res)
+    {
+        GameObject audioSourceObj = new GameObject();
+        AudioSource audioSource = audioSourceObj.AddComponent<AudioSource>();
+        audioSource.clip = Resources.Load<AudioClip>(res);
+        audioSource.volume = musicData.soundVolume;
+        audioSource.mute = musicData.soundMute;
+        audioSource.Play();
+        GameObject.Destroy(audioSourceObj,1);
     }
 }

@@ -28,6 +28,8 @@ public class ChooseScenePanel : BasePanel
         });
         btnStart.onClick.AddListener(() =>
         {
+            GameDataMgr.Instance.nowSelSceneId = nowSceneId;
+            btnStart.interactable = false;
             UIManager.Instance.HidePanel<ChooseScenePanel>();
             AsyncOperation ao = SceneManager.LoadSceneAsync(GameDataMgr.Instance.sceneInfos[nowSceneId].sceneName);
             ao.completed += (obj) =>
